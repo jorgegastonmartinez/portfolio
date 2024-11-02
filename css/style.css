@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+*::-moz-selection {
+    background-color: black;
+}
+*::selection {
+    background-color: orange;
+}
+  
+:root {
+    --ff--title: 'Poppins', sans-serif;
+    --ff--text: 'Inter', sans-serif;
+    --col--black: "";
+    --col--text: #CCCCCC;
+    --col--body: #1e1e1e;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--col--body);
+}
+
+img,
+video,
+iframe,
+picture,
+figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+
+h1 {
+    color: var(--col--text);
+    font-family: var(--ff--title);
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 3px;
+}
+h2 {
+    color: var(--col--text);
+    font-family: var(--ff--text);
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 3px;
+}
+p {
+    color: var(--col--text);
+    font-family: var(--ff--text);
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    font-size: 1.3rem;
+    text-wrap: balance;
+}
+li {
+    color: var(--col--text);
+    list-style-type: none;
+    font-weight: 600;
+    font-family: var(--ff--text);
+}
+a {
+    color: var(--col--text);
+    font-family: var(--ff--title);
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+p a {
+    display: inline;
+}
+.bi-github {
+    color: #FFFFFF;
+}
+.bi-linkedin {
+    color: #0077B5;
+}
+.bi-envelope {
+    color: white;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    line-height: 1.4em;
+} 
+main {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#main-content {
+    transition: transform 0.3s ease;
+}
+
+.content-shift {
+    transform: translateY(8rem); 
+}
+
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+
+/***********  navbar *********+*/
+
+.container-logo-nav img {
+    margin: 1rem 0 2rem 2rem;
+    width: 5rem;
+}
+
+.img-logo {
+    filter: invert(100%) brightness(200%);
+}
+
+
+.nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem 0 0;
+    position: sticky;
+    z-index: 1000;
+}
+.nav-ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.nav__open {
+    display: none;
+}
+.nav__close {
+    display: none;
+}
+
+
+
+/***********  REDES *********+*/
+.redes {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/***********  SOBRE MI *********+*/
+.section-sobre-mi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/***********  PROYECTOS *********+*/
+.section-proyectos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem;
+}
+.contenedor-proyectos {
+    width: 90%;
+    max-width: 56.25rem;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    padding: 3rem;
+    gap: 3rem;
+}
+
+.proyecto {
+     position: relative;
+}
+
+.proyecto-logo {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: ease 1.6s;
+    background-color: white;
+}
+
+.proyecto-logo img {
+    width: 10rem;
+}
+
+.proyecto:hover .proyecto-logo {
+    opacity: 1;
+    visibility: visible;
+    
+}   
+
+
+
+/*  prueba 2 */
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    perspective: 1000px;
+}
+
+/* Imagen de fondo */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+/* Título (inicialmente oculto) */
+.card-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.4s ease;
+}
+
+/* Efecto hover */
+
+.card:hover {
+    transform: scale(1.05) rotateY(10deg); /* Escala y rotación en 3D */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover img {
+    opacity: 0.3;
+    transform: scale(1.2); /* Zoom en la imagen */
+}
+
+.card:hover .card-title {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* El título aparece */
+}
+
+/* Opcional: Animación suave en móviles */
+.card:active {
+    transform: scale(0.95);
+}
+
+
+
+
+
+
+
+/***********  FOOTER *********+*/
+.copyright {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    column-gap: 1rem;
+}
+
+
+
+
+
+
+
+
+/***********  MEDIA QUORIES *********+*/
+
+@media screen and (max-width: 690px) {
+
+    .nav__open,
+    .nav__close {
+        display: block;
+        border: 0;
+        font-size: 1.5em;
+        background-color: transparent;
+        cursor: pointer;
+        color: white;
+    }
+
+    .nav__hamburger {
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-end;
+        gap: 1rem;
+        top: 2rem;
+        right: 0;
+        left: 0;
+        padding: 1rem;
+    }
+
+    .nav__hamburger.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav__open.hidden {
+        display: none;
+    }
+
+    .nav__ul {
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 2.5rem;
+    }
+}
