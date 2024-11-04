@@ -14,3 +14,12 @@ cerrar.addEventListener("click", () => {
     abrir.classList.remove('hidden');
     mainContent.classList.remove('content-shift');
 })
+
+document.querySelectorAll('[tabindex="0"]').forEach(element => {
+    element.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            element.click();
+        }
+    });
+});
